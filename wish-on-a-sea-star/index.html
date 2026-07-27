@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wish on a Sea Star</title>
+<meta name="description" content="Pin your wishes to the map. Discover dreams around the world. Grant a little hope, one wish at a time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="device-wrap">
+  <div class="device" id="device">
+
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="icons">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="currentColor"/><rect x="4.5" y="5" width="3" height="7" rx="0.5" fill="currentColor"/><rect x="9" y="3" width="3" height="9" rx="0.5" fill="currentColor"/><rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="currentColor"/></svg>
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5C10.5 10.5 12.6 9.5 14 8L15 9C13.3 11 10.8 12 8 12C5.2 12 2.7 11 1 9L2 8C3.4 9.5 5.5 10.5 8 10.5Z" fill="currentColor"/><path d="M8 7C9.5 7 10.8 6.4 11.8 5.4L12.8 6.4C11.5 7.7 9.8 8.5 8 8.5C6.2 8.5 4.5 7.7 3.2 6.4L4.2 5.4C5.2 6.4 6.5 7 8 7Z" fill="currentColor"/><path d="M8 3.5C8.9 3.5 9.7 3.2 10.4 2.6L11.4 3.6C10.5 4.4 9.3 5 8 5C6.7 5 5.5 4.4 4.6 3.6L5.6 2.6C6.3 3.2 7.1 3.5 8 3.5Z" fill="currentColor"/></svg>
+        <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="1" y="1" width="20" height="10" rx="2.5" stroke="currentColor" stroke-width="1"/><rect x="2.5" y="2.5" width="15" height="7" rx="1.2" fill="currentColor"/><rect x="22" y="4" width="1.5" height="4" rx="0.7" fill="currentColor"/></svg>
+      </span>
+    </div>
+
+    <div class="screens" id="screens">
+
+      <!-- ======================= SPLASH ======================= -->
+      <section class="screen active splash-screen" data-screen="splash">
+        <div class="screen-scroll">
+          <div class="brand-lockup">
+            <span class="brand-tagline">Wish on a</span>
+            <svg class="wordmark" width="230" height="120" viewBox="0 0 230 120">
+              <text x="0" y="46" font-family="Poppins" font-weight="800" font-size="46" fill="#00A88F">Se</text>
+              <path d="M108 8 L120 34 L149 36 L127 55 L134 84 L108 68 L82 84 L89 55 L67 36 L96 34 Z" fill="#E89468"/>
+              <text x="102" y="46" font-family="Poppins" font-weight="800" font-size="46" fill="#00A88F">a</text>
+              <text x="0" y="104" font-family="Poppins" font-weight="800" font-size="46" fill="#00A88F">St</text>
+              <path d="M96 66 L108 92 L137 94 L115 113 L122 142 L96 126 L70 142 L77 113 L55 94 L84 92 Z" fill="#E89468"/>
+              <text x="112" y="104" font-family="Poppins" font-weight="800" font-size="46" fill="#00A88F">r</text>
+            </svg>
+          </div>
+          <p class="splash-copy">Make a wish. <strong>Someone could make it come true.</strong><br>A community-powered map of everyday hopes — big and small.</p>
+          <button class="btn btn-primary" style="margin-top:6px" data-nav="onboarding">Get Started</button>
+          <button class="btn btn-ghost" data-nav="auth" data-auth-tab="signin">I already have an account</button>
+        </div>
+      </section>
+
+      <!-- ======================= ONBOARDING ======================= -->
+      <section class="screen onb-screen" data-screen="onboarding" style="padding:10px 22px 26px;">
+        <div class="onb-slide active" data-slide="0">
+          <div class="onb-art" style="background:#E6F7F3;">
+            <svg width="86" height="86" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.2-9.3-9.4C1 8.2 2.6 4.5 6.1 3.7c2-.5 4 .2 5.2 1.8C12.5 3.9 14.5 3.2 16.5 3.7c3.5.8 5.1 4.5 3.4 7.9C17.6 15.8 12 21 12 21z" stroke="#00A88F" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10.5" r="1.4" fill="#00D8B9"/></svg>
+          </div>
+          <h2>Pin a wish, anywhere in the world</h2>
+          <p>Drop your hope onto the map — your exact address is never shown. Choose your neighborhood or a symbolic place instead.</p>
+        </div>
+        <div class="onb-slide" data-slide="1">
+          <div class="onb-art" style="background:#FDEEE0;">
+            <svg width="86" height="86" viewBox="0 0 24 24" fill="none"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="#E89468" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="4.5" fill="#E89468"/></svg>
+          </div>
+          <h2>Discover dreams nearby</h2>
+          <p>Browse practical, everyday wishes — groceries, a warm coat, zoo tickets — filtered by what's close, affordable, and easy to grant.</p>
+        </div>
+        <div class="onb-slide" data-slide="2">
+          <div class="onb-art" style="background:#F1EBFD;">
+            <svg width="86" height="86" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#8765F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3l2.2 4.4 4.8.7-3.5 3.4.8 4.8L12 14l-4.3 2.3.8-4.8L5 7.1l4.8-.7z" stroke="#8765F2" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h2>Give safely, feel the magic</h2>
+          <p>Every grant is verified with a moderated pickup spot, so kindness stays safe on both sides. Small acts here go a long way.</p>
+        </div>
+        <div class="onb-dots"><span class="active"></span><span></span><span></span></div>
+        <div class="onb-footer">
+          <button class="btn btn-primary" id="onbNext">Next</button>
+          <button class="onb-skip" data-nav="auth" data-auth-tab="signup">Skip</button>
+        </div>
+      </section>
+
+      <!-- ======================= AUTH ======================= -->
+      <section class="screen" data-screen="auth">
+        <div class="screen-scroll" style="padding-top:34px;">
+          <div class="auth-hero">
+            <span class="brand-tagline">Wish on a</span>
+            <svg class="wordmark" width="150" height="78" viewBox="0 0 230 120" style="margin:0 auto;display:block;">
+              <text x="0" y="46" font-family="Poppins" font-weight="800" font-size="46" fill="#00A88F">Se</text>
+              <path d="M108 8 L120 34 L149 36 L127 55 L134 84 L108 68 L82 84 L89 55 L67 36 L96 34 Z" fill="#E89468"/>
+              <text x="102" y="46" font-family="Poppins" font-weight="800" font-size="46" fill="#00A88F">a</text>
+              <text x="0" y="104" font-family="Poppins" font-weight="800" font-size="46" fill="#00A88F">St</text>
+              <path d="M96 66 L108 92 L137 94 L115 113 L122 142 L96 126 L70 142 L77 113 L55 94 L84 92 Z" fill="#E89468"/>
+              <text x="112" y="104" font-family="Poppins" font-weight="800" font-size="46" fill="#00A88F">r</text>
+            </svg>
+            <p class="prompt">Create an account or log in</p>
+          </div>
+
+          <div class="seg">
+            <button class="active" id="tabSignIn">Sign In</button>
+            <button id="tabSignUp">Sign Up</button>
+          </div>
+
+          <div id="signInForm">
+            <div class="field">
+              <label>Email</label>
+              <div class="input-wrap">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6"/></svg>
+                <input type="email" placeholder="Enter your email">
+              </div>
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <div class="input-wrap">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.6"/></svg>
+                <input type="password" placeholder="Enter your password">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="cursor:pointer"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+              </div>
+            </div>
+            <a class="forgot" href="#">Forgot Password?</a>
+            <button class="btn btn-primary" data-nav="map">Sign In</button>
+          </div>
+
+          <div id="signUpForm" style="display:none;">
+            <div class="field">
+              <label>Name</label>
+              <div class="input-wrap">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 20a7.5 7.5 0 0115 0" stroke="currentColor" stroke-width="1.6"/></svg>
+                <input type="text" placeholder="Your first name">
+              </div>
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <div class="input-wrap">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6"/></svg>
+                <input type="email" placeholder="Enter your email">
+              </div>
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <div class="input-wrap">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.6"/></svg>
+                <input type="password" placeholder="Create a password">
+              </div>
+              <p class="field-hint">We'll never ask for your home address — only a general area or symbolic spot.</p>
+            </div>
+            <button class="btn btn-primary" data-nav="map">Create Account</button>
+          </div>
+
+          <div class="trust-note">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Every profile is moderated and every wish is reviewed before it goes live, so you can browse and give with confidence.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= WISH MAP ======================= -->
+      <section class="screen" data-screen="map">
+        <div class="appbar">
+          <h1 style="flex:1">Wish Map</h1>
+          <button class="icon-btn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        </div>
+        <div class="screen-scroll no-pad-top">
+          <div class="map-canvas" id="mapCanvas">
+            <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice">
+              <ellipse cx="180" cy="150" rx="95" ry="60" fill="#EDE6C8" opacity="0.9"/>
+              <ellipse cx="150" cy="130" rx="55" ry="34" fill="#B8D8A0"/>
+              <ellipse cx="230" cy="175" rx="40" ry="26" fill="#B8D8A0"/>
+              <ellipse cx="300" cy="240" rx="60" ry="34" fill="#EDE6C8" opacity="0.85"/>
+              <ellipse cx="300" cy="230" rx="34" ry="18" fill="#B8D8A0"/>
+              <ellipse cx="70" cy="250" rx="42" ry="24" fill="#EDE6C8" opacity="0.8"/>
+              <circle cx="340" cy="60" r="16" fill="#EDE6C8" opacity="0.7"/>
+            </svg>
+            <div class="map-search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Search wishes near you…</div>
+
+            <div class="map-pin" style="left:30%;top:44%;" data-wish="alex">
+              <svg width="30" height="36" viewBox="0 0 30 36"><path d="M15 0C7 0 0 6.5 0 14.5 0 24 15 36 15 36S30 24 30 14.5C30 6.5 23 0 15 0Z" fill="#F66062"/><circle cx="15" cy="14" r="6" fill="#fff"/></svg>
+            </div>
+            <div class="map-pin" style="left:58%;top:36%;" data-wish="mira">
+              <svg width="30" height="36" viewBox="0 0 30 36"><path d="M15 0C7 0 0 6.5 0 14.5 0 24 15 36 15 36S30 24 30 14.5C30 6.5 23 0 15 0Z" fill="#00D8B9"/><circle cx="15" cy="14" r="6" fill="#fff"/></svg>
+            </div>
+            <div class="map-pin" style="left:74%;top:63%;" data-wish="theo">
+              <svg width="30" height="36" viewBox="0 0 30 36"><path d="M15 0C7 0 0 6.5 0 14.5 0 24 15 36 15 36S30 24 30 14.5C30 6.5 23 0 15 0Z" fill="#E89468"/><circle cx="15" cy="14" r="6" fill="#fff"/></svg>
+            </div>
+            <div class="map-pin granted" style="left:16%;top:70%;" data-wish="priya">
+              <svg width="30" height="36" viewBox="0 0 30 36"><path d="M15 0C7 0 0 6.5 0 14.5 0 24 15 36 15 36S30 24 30 14.5C30 6.5 23 0 15 0Z" fill="#8765F2"/><circle cx="15" cy="14" r="6" fill="#fff"/></svg>
+            </div>
+
+            <div class="map-legend">
+              <span><i style="background:#F66062"></i>Needs help</span>
+              <span><i style="background:#00D8B9"></i>Almost there</span>
+              <span><i style="background:#8765F2"></i>Granted</span>
+            </div>
+          </div>
+
+          <div class="pill-row" style="margin-top:16px;">
+            <button class="pill active" data-filter="nearby">Nearby</button>
+            <button class="pill outline" data-filter="small">Small & easy &lt;$50</button>
+            <button class="pill outline" data-filter="similar">Similar to mine</button>
+            <button class="pill outline" data-filter="trending">Trending</button>
+          </div>
+
+          <div class="tip-banner">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v.01M12 11v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div><strong>Wishes are pinned to general areas, never exact addresses.</strong>Tap a star to preview and see how you can help.</div>
+          </div>
+
+          <div class="section-title">Nearby wishes<span class="see-all" data-nav="explore">See all</span></div>
+
+          <div class="wish-card" data-wish="alex">
+            <div class="avatar" style="background:#F66062">A</div>
+            <div class="wish-card-body">
+              <div class="wish-card-top"><h4>Alex's Wish</h4><span class="tag medium">Medium</span></div>
+              <p class="desc">Wishes for a new laptop for college — starting my computer science degree this fall.</p>
+              <div class="progress-row">
+                <div class="progress-track"><div class="progress-fill" style="width:70%"></div></div>
+                <div class="progress-nums"><span>$850 raised</span><span>Goal $1,200</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wish-card" data-wish="mira">
+            <div class="avatar" style="background:#00A88F">M</div>
+            <div class="wish-card-body">
+              <div class="wish-card-top"><h4>Mira's Wish</h4><span class="tag small">Small</span></div>
+              <p class="desc">A week of groceries for me and my daughter while I'm between jobs.</p>
+              <div class="progress-row">
+                <div class="progress-track"><div class="progress-fill" style="width:40%"></div></div>
+                <div class="progress-nums"><span>$32 raised</span><span>Goal $80</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= EXPLORE ======================= -->
+      <section class="screen" data-screen="explore">
+        <div class="appbar"><h1>Explore Wishes</h1></div>
+        <div class="screen-scroll">
+          <div class="pill-row">
+            <button class="pill active" data-cat="all">All</button>
+            <button class="pill outline" data-cat="essentials">Essentials</button>
+            <button class="pill outline" data-cat="family">Family &amp; Kids</button>
+            <button class="pill outline" data-cat="education">Education</button>
+            <button class="pill outline" data-cat="fun">Adventure &amp; Fun</button>
+          </div>
+          <div class="tip-banner">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.2-9.3-9.4C1 8.2 2.6 4.5 6.1 3.7c2-.5 4 .2 5.2 1.8C12.5 3.9 14.5 3.2 16.5 3.7c3.5.8 5.1 4.5 3.4 7.9C17.6 15.8 12 21 12 21z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <div><strong>Small wishes get granted 3x faster.</strong>Try filtering by "Small &amp; easy" if you want your help to go further today.</div>
+          </div>
+
+          <div class="wish-card" data-wish="mira">
+            <div class="avatar" style="background:#00A88F">M</div>
+            <div class="wish-card-body">
+              <div class="wish-card-top"><h4>Mira's Wish</h4><span class="tag small">Small</span></div>
+              <p class="desc">A week of groceries for me and my daughter while I'm between jobs.</p>
+              <div class="progress-row">
+                <div class="progress-track"><div class="progress-fill" style="width:40%"></div></div>
+                <div class="progress-nums"><span>$32 raised</span><span>Goal $80</span></div>
+              </div>
+              <div class="wish-meta"><span>📍 2.1 mi away</span><span>✔ Verified</span></div>
+            </div>
+          </div>
+
+          <div class="wish-card" data-wish="theo">
+            <div class="avatar" style="background:#E89468">T</div>
+            <div class="wish-card-body">
+              <div class="wish-card-top"><h4>Theo's Wish</h4><span class="tag small">Small</span></div>
+              <p class="desc">Tickets to the zoo with my little brother for his birthday this month.</p>
+              <div class="progress-row">
+                <div class="progress-track"><div class="progress-fill" style="width:60%"></div></div>
+                <div class="progress-nums"><span>$18 raised</span><span>Goal $30</span></div>
+              </div>
+              <div class="wish-meta"><span>📍 4.6 mi away</span><span>✔ Verified</span></div>
+            </div>
+          </div>
+
+          <div class="wish-card" data-wish="alex">
+            <div class="avatar" style="background:#F66062">A</div>
+            <div class="wish-card-body">
+              <div class="wish-card-top"><h4>Alex's Wish</h4><span class="tag medium">Medium</span></div>
+              <p class="desc">A new laptop for college — starting my computer science degree this fall.</p>
+              <div class="progress-row">
+                <div class="progress-track"><div class="progress-fill" style="width:70%"></div></div>
+                <div class="progress-nums"><span>$850 raised</span><span>Goal $1,200</span></div>
+              </div>
+              <div class="wish-meta"><span>📍 Symbolic pin</span><span>✔ Verified</span></div>
+            </div>
+          </div>
+
+          <div class="wish-card" data-wish="priya" style="opacity:.6;">
+            <div class="avatar" style="background:#8765F2">P</div>
+            <div class="wish-card-body">
+              <div class="wish-card-top"><h4>Priya's Wish</h4><span class="tag big">Granted 🎉</span></div>
+              <p class="desc">Second-hand winter coat for my son — granted by 3 kind souls.</p>
+              <div class="wish-meta"><span>📍 1.3 mi away</span><span>✔ Verified</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= MAKE A WISH (WIZARD) ======================= -->
+      <section class="screen" data-screen="wish">
+        <div class="appbar">
+          <button class="icon-btn ghost" id="wizBack"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <h1 style="font-family:var(--font-script);color:var(--secondary);font-weight:400;font-size:26px;">Make a Wish</h1>
+        </div>
+        <div class="screen-scroll">
+          <div class="wiz-steps">
+            <div class="current" data-step-dot="0"></div><div data-step-dot="1"></div><div data-step-dot="2"></div><div data-step-dot="3"></div><div data-step-dot="4"></div>
+          </div>
+
+          <div class="wiz-panel active" data-step="0">
+            <div><div class="wiz-title">Add a photo</div><div class="wiz-sub">Optional, but wishes with a photo feel more real — and get granted more often. 💛</div></div>
+            <div class="photo-drop" id="photoDrop">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 8h3l2-3h6l2 3h3v11H4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.3" stroke="currentColor" stroke-width="1.6"/></svg>
+              <span id="photoDropText">Tap to add photo</span>
+            </div>
+          </div>
+
+          <div class="wiz-panel" data-step="1">
+            <div><div class="wiz-title">Describe your wish</div><div class="wiz-sub">Speak from the heart — a few honest sentences work best.</div></div>
+            <textarea id="wishText" maxlength="220" placeholder="e.g. I'm starting my computer science degree and really need a laptop for my studies…"></textarea>
+            <div class="char-row"><span id="charCount">0/220</span><span>Need inspiration?</span></div>
+            <div class="inspire-row">
+              <button class="chip-suggest" data-fill="A week of groceries for my family while I'm between jobs.">🛒 Groceries</button>
+              <button class="chip-suggest" data-fill="A warm second-hand coat for winter.">🧥 Winter coat</button>
+              <button class="chip-suggest" data-fill="Zoo tickets for my kid's birthday.">🦁 Zoo day</button>
+            </div>
+          </div>
+
+          <div class="wiz-panel" data-step="2">
+            <div><div class="wiz-title">Choose a category</div><div class="wiz-sub">This helps the right people find and understand your wish.</div></div>
+            <div class="cat-grid">
+              <button class="cat-card" data-cat-pick="essentials"><div class="cat-ic" style="background:#E6F7F3">🛒</div><span class="name">Essentials</span><span class="desc">Food, clothing, everyday needs</span></button>
+              <button class="cat-card" data-cat-pick="education"><div class="cat-ic" style="background:#FDEEE0">🎓</div><span class="name">Education</span><span class="desc">School, courses, supplies</span></button>
+              <button class="cat-card" data-cat-pick="family"><div class="cat-ic" style="background:#F1EBFD">👪</div><span class="name">Family &amp; Kids</span><span class="desc">For someone you care for</span></button>
+              <button class="cat-card" data-cat-pick="health"><div class="cat-ic" style="background:#FDEBEC">💊</div><span class="name">Health</span><span class="desc">Care &amp; wellbeing</span></button>
+              <button class="cat-card" data-cat-pick="fun"><div class="cat-ic" style="background:#E6F7F3">🎡</div><span class="name">Adventure &amp; Fun</span><span class="desc">A day to remember</span></button>
+              <button class="cat-card" data-cat-pick="community"><div class="cat-ic" style="background:#FDEEE0">🤝</div><span class="name">Community</span><span class="desc">For your neighborhood</span></button>
+            </div>
+          </div>
+
+          <div class="wiz-panel" data-step="3">
+            <div><div class="wiz-title">How big is this wish?</div><div class="wiz-sub">Be realistic — practical, well-scoped wishes are the easiest to grant.</div></div>
+            <div class="scale-row">
+              <button class="scale-card" data-scale="small"><div class="amt">&lt; $50</div><div class="lbl">Small</div></button>
+              <button class="scale-card" data-scale="medium"><div class="amt">$50–200</div><div class="lbl">Medium</div></button>
+              <button class="scale-card" data-scale="big"><div class="amt">$200+</div><div class="lbl">Big dream</div></button>
+            </div>
+            <div class="scale-hint" id="scaleHint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v.01M12 11v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span>Pick a size to see how quickly wishes like it usually get granted.</span>
+            </div>
+          </div>
+
+          <div class="wiz-panel" data-step="4">
+            <div><div class="wiz-title">Pin your location</div><div class="wiz-sub">Choose how much detail to share — your safety comes first.</div></div>
+            <div class="loc-option active" data-loc="neighborhood">
+              <div class="radio"></div>
+              <div><div class="lo-title">My neighborhood<span class="badge-rec">Recommended</span></div><div class="lo-desc">Shows a general area, not your exact address.</div></div>
+            </div>
+            <div class="loc-option" data-loc="symbolic">
+              <div class="radio"></div>
+              <div><div class="lo-title">A symbolic place</div><div class="lo-desc">Pin somewhere meaningful to your wish, like a place you dream of visiting.</div></div>
+            </div>
+            <div class="loc-option" data-loc="exact">
+              <div class="radio"></div>
+              <div><div class="lo-title">Exact location</div><div class="lo-desc">Only for local pickup — visible just after a wish is granted.</div></div>
+            </div>
+          </div>
+
+          <div class="wiz-panel" data-step="5">
+            <div><div class="wiz-title">Review your wish</div><div class="wiz-sub">Here's how it will appear on the map.</div></div>
+            <div class="wish-card" style="margin-bottom:4px;">
+              <div class="avatar" style="background:#F66062">Y</div>
+              <div class="wish-card-body">
+                <div class="wish-card-top"><h4>Your Wish</h4><span class="tag small" id="reviewScaleTag">Small</span></div>
+                <p class="desc" id="reviewText">Describe your wish…</p>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-row"><span class="k">Category</span><span class="v" id="reviewCat">—</span></div>
+              <div class="review-row"><span class="k">Location sharing</span><span class="v" id="reviewLoc">My neighborhood</span></div>
+              <div class="review-row"><span class="k">Visibility</span><span class="v">Public on Wish Map</span></div>
+            </div>
+          </div>
+
+          <div class="wiz-nav">
+            <button class="btn btn-outline" id="wizPrev" style="display:none;">Back</button>
+            <button class="btn btn-primary" id="wizNext">Continue</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= WISH CELEBRATE ======================= -->
+      <section class="screen" data-screen="wishCelebrate">
+        <div class="celebrate" id="wishConfettiHost">
+          <div class="celebrate-badge">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.2 4.4 4.8.7-3.5 3.4.8 4.8L12 14l-4.3 2.3.8-4.8L5 7.1l4.8-.7z" fill="#00D8B9"/></svg>
+          </div>
+          <h2>Your wish is floating in the world now 🌊</h2>
+          <p>It's live on the Wish Map for others to discover. We'll notify you the moment someone reaches out to help.</p>
+          <div class="impact-strip"><span class="impact-pill">🔔 You'll be notified</span><span class="impact-pill">🔒 Location protected</span></div>
+          <button class="btn btn-primary" style="margin-top:22px;max-width:260px;" data-nav="map">Back to Wish Map</button>
+        </div>
+      </section>
+
+      <!-- ======================= GRANT LIST ======================= -->
+      <section class="screen" data-screen="grantList">
+        <div class="appbar"><h1>Grant a Wish</h1></div>
+        <div class="screen-scroll">
+          <div class="tip-banner">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div><strong>Every wish here is verified.</strong>Pick one that feels right — even $5 moves someone closer to their goal.</div>
+          </div>
+          <div class="pill-row">
+            <button class="pill active" data-filter="nearby">Nearby</button>
+            <button class="pill outline" data-filter="small">Small &amp; easy</button>
+            <button class="pill outline" data-filter="almost">Almost funded</button>
+          </div>
+
+          <div class="wish-card" data-wish="mira">
+            <div class="avatar" style="background:#00A88F">M</div>
+            <div class="wish-card-body">
+              <div class="wish-card-top"><h4>Mira's Wish</h4><span class="tag small">Small</span></div>
+              <p class="desc">A week of groceries for me and my daughter while I'm between jobs.</p>
+              <div class="progress-row"><div class="progress-track"><div class="progress-fill" style="width:40%"></div></div><div class="progress-nums"><span>$32 raised</span><span>Goal $80</span></div></div>
+            </div>
+          </div>
+          <div class="wish-card" data-wish="theo">
+            <div class="avatar" style="background:#E89468">T</div>
+            <div class="wish-card-body">
+              <div class="wish-card-top"><h4>Theo's Wish</h4><span class="tag small">Small</span></div>
+              <p class="desc">Tickets to the zoo with my little brother for his birthday this month.</p>
+              <div class="progress-row"><div class="progress-track"><div class="progress-fill" style="width:60%"></div></div><div class="progress-nums"><span>$18 raised</span><span>Goal $30</span></div></div>
+            </div>
+          </div>
+          <div class="wish-card" data-wish="alex">
+            <div class="avatar" style="background:#F66062">A</div>
+            <div class="wish-card-body">
+              <div class="wish-card-top"><h4>Alex's Wish</h4><span class="tag medium">Medium</span></div>
+              <p class="desc">A new laptop for college — starting my computer science degree this fall.</p>
+              <div class="progress-row"><div class="progress-track"><div class="progress-fill" style="width:70%"></div></div><div class="progress-nums"><span>$850 raised</span><span>Goal $1,200</span></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= GRANT DETAIL ======================= -->
+      <section class="screen" data-screen="grant">
+        <div class="appbar">
+          <button class="icon-btn ghost" data-nav-back><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <h1>Grant a Wish</h1>
+        </div>
+        <div class="screen-scroll">
+          <div class="wish-card" style="border:none;padding:0;margin-bottom:14px;">
+            <div class="avatar" style="background:#F66062" id="grantAvatar">A</div>
+            <div class="wish-card-body">
+              <h4 id="grantName" style="font-size:15px;">Alex's Wish</h4>
+              <p class="desc" id="grantSub" style="-webkit-line-clamp:1;">Wishes for a new laptop for college</p>
+            </div>
+          </div>
+          <div class="grant-quote" id="grantQuote">"I'm starting my computer science degree and really need a laptop for my studies. Any help would mean the world to me!"</div>
+
+          <div class="progress-row" style="margin-top:14px;">
+            <div class="progress-track"><div class="progress-fill" id="grantProgressFill" style="width:70%"></div></div>
+            <div class="progress-nums"><span id="grantRaised" style="color:var(--secondary);font-weight:700;">$850</span><span>Goal: <span id="grantGoal">$1,200</span></span></div>
+          </div>
+
+          <div class="section-title">Choose Amount</div>
+          <div class="amount-grid">
+            <button class="amt-chip" data-amt="25">$25</button>
+            <button class="amt-chip" data-amt="50">$50</button>
+            <button class="amt-chip active" data-amt="100">$100</button>
+          </div>
+          <div class="amount-hint" id="amountHint">$100 covers about a third of what's left — a huge step toward Alex's goal.</div>
+          <div class="input-wrap custom-amt">
+            <span style="color:var(--faint)">$</span>
+            <input type="number" id="customAmt" placeholder="Custom amount">
+          </div>
+
+          <div class="section-title">Payment Method</div>
+          <div class="pay-option active" data-pay="card">
+            <div class="radio"></div>
+            <svg width="20" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.6"/></svg>
+            Credit / Debit Card
+          </div>
+          <div class="pay-option" data-pay="paypal">
+            <div class="radio"></div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 4h8c3 0 5 2 4.5 5-.5 3.3-3 5-6.5 5H9.5L8 20H4z" stroke="#1739A6" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            PayPal
+          </div>
+
+          <div id="cardFields">
+            <div class="field"><label>Card</label><div class="input-wrap"><input placeholder="1234 5678 9012 3456"></div></div>
+            <div style="display:flex;gap:12px;">
+              <div class="field" style="flex:1"><label>Expiry Date</label><div class="input-wrap"><input placeholder="MM/YY"></div></div>
+              <div class="field" style="flex:1"><label>CVV</label><div class="input-wrap"><input placeholder="123"></div></div>
+            </div>
+            <div class="field"><label>Cardholder Name</label><div class="input-wrap"><input placeholder="Your name"></div></div>
+          </div>
+
+          <div class="section-title">Send a Message (Optional)</div>
+          <textarea placeholder="Write an encouraging message to Alex…" style="height:80px;"></textarea>
+          <label class="checkbox-row" style="margin-top:10px;"><input type="checkbox"> Send anonymously</label>
+
+          <div class="section-title">Why this is safe to grant</div>
+          <div class="trust-panel">
+            <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>Identity &amp; wish reviewed by our moderation team</div>
+            <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.2-9.3-9.4C1 8.2 2.6 4.5 6.1 3.7c2-.5 4 .2 5.2 1.8C12.5 3.9 14.5 3.2 16.5 3.7c3.5.8 5.1 4.5 3.4 7.9C17.6 15.8 12 21 12 21z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Funds are only released after a confirmed local pickup or delivery</div>
+            <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Full receipt &amp; impact summary sent after granting</div>
+            <a class="report-link" href="#">Report a concern about this wish</a>
+          </div>
+
+          <div class="section-title">Payment Summary</div>
+          <div class="summary-box">
+            <div class="summary-line"><span>Donation</span><span id="sumDonation">$100.00</span></div>
+            <div class="summary-line"><span>Processing Fee</span><span id="sumFee">$3.20</span></div>
+            <div class="summary-line total"><span>Total</span><span id="sumTotal">$103.20</span></div>
+          </div>
+
+          <button class="btn btn-primary" style="margin-top:20px;" id="grantSubmit">Grant Wish &amp; Send Message</button>
+        </div>
+      </section>
+
+      <!-- ======================= GRANT CELEBRATE ======================= -->
+      <section class="screen" data-screen="grantCelebrate">
+        <div class="celebrate" id="grantConfettiHost">
+          <div class="celebrate-badge">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.2-9.3-9.4C1 8.2 2.6 4.5 6.1 3.7c2-.5 4 .2 5.2 1.8C12.5 3.9 14.5 3.2 16.5 3.7c3.5.8 5.1 4.5 3.4 7.9C17.6 15.8 12 21 12 21z" fill="#F66062"/></svg>
+          </div>
+          <h2>You just made someone's day 💫</h2>
+          <p>Alex will be notified right away. Thank you for turning a wish into something real.</p>
+          <div class="impact-strip"><span class="impact-pill">🌟 2 grants to Kind Soul Lvl 2</span></div>
+          <button class="btn btn-secondary" style="margin-top:22px;max-width:260px;" data-nav="explore">Keep Exploring</button>
+          <button class="btn btn-ghost" data-nav="profile">View My Impact</button>
+        </div>
+      </section>
+
+      <!-- ======================= PROFILE ======================= -->
+      <section class="screen" data-screen="profile">
+        <div class="appbar"><h1>Profile</h1><button class="icon-btn" style="margin-left:auto" data-nav="settings"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.9 2.9l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.6V21a2 2 0 11-4 0v-.2a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.9-2.9l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.6-1H3a2 2 0 110-4h.2a1.7 1.7 0 001.6-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.9-2.9l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.6V3a2 2 0 114 0v.2a1.7 1.7 0 001 1.6 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.9 2.9l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.6 1H21a2 2 0 110 4h-.2a1.7 1.7 0 00-1.6 1z" stroke="currentColor" stroke-width="1.4"/></svg></button></div>
+        <div class="screen-scroll">
+          <div class="profile-head">
+            <div class="avatar" style="background:var(--secondary-bright)">C</div>
+            <h2>Camille</h2>
+            <p>Wishing since March 2026 · San Diego area</p>
+          </div>
+          <div class="stat-row">
+            <div class="stat-box"><div class="num">3</div><div class="lbl">Wishes made</div></div>
+            <div class="stat-box"><div class="num">12</div><div class="lbl">Wishes granted</div></div>
+            <div class="stat-box"><div class="num">7</div><div class="lbl">Day streak</div></div>
+          </div>
+
+          <div class="section-title">Your Badges</div>
+          <div class="badge-row">
+            <div class="badge-card" style="background:#FDEBEC"><div class="ic" style="background:#F66062"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.2 4.4 4.8.7-3.5 3.4.8 4.8L12 14l-4.3 2.3.8-4.8L5 7.1l4.8-.7z" fill="#fff"/></svg></div><div class="name">Wish Granter</div><div class="lvl">Level 3</div></div>
+            <div class="badge-card" style="background:#E6F7F3"><div class="ic" style="background:#00A88F"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.2-9.3-9.4C1 8.2 2.6 4.5 6.1 3.7c2-.5 4 .2 5.2 1.8C12.5 3.9 14.5 3.2 16.5 3.7c3.5.8 5.1 4.5 3.4 7.9C17.6 15.8 12 21 12 21z" fill="#fff"/></svg></div><div class="name">Kind Soul</div><div class="lvl">Level 2</div></div>
+            <div class="badge-card" style="background:#F1EBFD"><div class="ic" style="background:#8765F2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.4"/></svg></div><div class="name">Dream Maker</div><div class="lvl">Locked</div></div>
+          </div>
+
+          <div class="tab-row">
+            <div class="tab-item active" data-ptab="mine">My Wishes</div>
+            <div class="tab-item" data-ptab="granted">Granted</div>
+            <div class="tab-item" data-ptab="settings">Settings</div>
+          </div>
+
+          <div class="ptab-panel active" data-ppanel="mine" style="padding-top:14px;">
+            <div class="wish-card"><div class="avatar" style="background:#00D8B9">🌊</div><div class="wish-card-body"><div class="wish-card-top"><h4>New running shoes</h4><span class="tag small">Small</span></div><div class="progress-row"><div class="progress-track"><div class="progress-fill" style="width:20%"></div></div><div class="progress-nums"><span>$12 raised</span><span>Goal $60</span></div></div></div></div>
+          </div>
+          <div class="ptab-panel" data-ppanel="granted" style="padding-top:14px;display:none;">
+            <div class="wish-card" style="opacity:.75"><div class="avatar" style="background:#8765F2">P</div><div class="wish-card-body"><div class="wish-card-top"><h4>Priya's Wish</h4><span class="tag big">Granted</span></div><p class="desc">You gave $50 toward a winter coat.</p></div></div>
+          </div>
+          <div class="ptab-panel" data-ppanel="settings" style="padding-top:10px;display:none;">
+            <div class="settings-row"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.2-9.3-9.4C1 8.2 2.6 4.5 6.1 3.7c2-.5 4 .2 5.2 1.8C12.5 3.9 14.5 3.2 16.5 3.7c3.5.8 5.1 4.5 3.4 7.9C17.6 15.8 12 21 12 21z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Privacy &amp; location sharing<span class="arrow">›</span></div>
+            <div class="settings-row"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Notifications<span class="arrow">›</span></div>
+            <div class="settings-row"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 9v4M12 17v.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10.3 3.9L2.5 18a1.5 1.5 0 001.3 2.2h16.4a1.5 1.5 0 001.3-2.2L13.7 3.9a1.5 1.5 0 00-2.6 0z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Report a concern<span class="arrow">›</span></div>
+            <div class="settings-row"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out<span class="arrow">›</span></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="sheet-backdrop" id="sheetBackdrop"></div>
+    <div class="sheet" id="wishSheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-body" id="sheetBody"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <nav class="bottom-nav" id="bottomNav">
+      <button class="nav-item active" data-nav="map" data-navkey="map">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="1.7"/></svg>
+        Wish Map
+      </button>
+      <button class="nav-item" data-nav="explore" data-navkey="explore">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M15 9l-2 6-6 2 2-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        Explore
+      </button>
+      <button class="nav-item wish-fab" data-nav="wish" data-navkey="wish">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+        Wish
+      </button>
+      <button class="nav-item" data-nav="grantList" data-navkey="grantList">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 8v13" stroke="currentColor" stroke-width="1.7"/><path d="M12 8c-1.8 0-3-1-3-2.5S9.8 3 11 3c1.5 0 1.7 2.5 1 5zm0 0c1.8 0 3-1 3-2.5S13.2 3 12 3c-1.5 0-1.7 2.5-1 5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        Grant
+      </button>
+      <button class="nav-item" data-nav="profile" data-navkey="profile">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M4.5 20a7.5 7.5 0 0115 0" stroke="currentColor" stroke-width="1.7"/></svg>
+        Profile
+      </button>
+    </nav>
+
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
