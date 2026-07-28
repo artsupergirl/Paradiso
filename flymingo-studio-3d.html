@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlyMingo Studio — 3D</title>
+<meta name="description" content="Interactive 3D recreation of the FlyMingo design studio.">
+<style>
+  :root{
+    --pink: #ec1e8f;
+    --pink-deep: #c8116f;
+    --yellow: #f4c60d;
+    --cream: #faf7f0;
+    --ink: #221c1f;
+  }
+  html,body{
+    margin:0; padding:0; height:100%; overflow:hidden;
+    background:#e9e4d8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  canvas{ display:block; touch-action:none; }
+
+  #overlay{
+    position:fixed; top:0; left:0; right:0;
+    display:flex; align-items:flex-start; justify-content:space-between;
+    padding:18px 22px; pointer-events:none; z-index:10;
+  }
+  #title{
+    pointer-events:auto;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter: blur(6px);
+    border-radius:14px;
+    padding:12px 18px;
+    box-shadow:0 6px 24px rgba(0,0,0,0.12);
+  }
+  #title h1{
+    margin:0; font-size:17px; letter-spacing:0.2px; color:var(--ink);
+    font-weight:800;
+  }
+  #title h1 span{ color:var(--pink); font-style:italic; }
+  #title p{
+    margin:4px 0 0; font-size:12px; color:#6b6560;
+  }
+  #controls{
+    pointer-events:auto;
+    display:flex; gap:8px;
+  }
+  .btn{
+    background:var(--pink);
+    color:#fff; border:none; border-radius:999px;
+    padding:10px 16px; font-size:13px; font-weight:700;
+    cursor:pointer; box-shadow:0 6px 18px rgba(236,30,143,0.35);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); background:var(--pink-deep); }
+  .btn.secondary{
+    background:var(--yellow); color:#4a3c05;
+    box-shadow:0 6px 18px rgba(244,198,13,0.35);
+  }
+  #loading{
+    position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+    background:var(--cream); z-index:20; flex-direction:column; gap:14px;
+    transition:opacity .5s ease;
+  }
+  #loading .spinner{
+    width:42px; height:42px; border-radius:50%;
+    border:4px solid #f0dfe9; border-top-color:var(--pink);
+    animation:spin 0.9s linear infinite;
+  }
+  #loading span{ color:#7a746c; font-size:13px; letter-spacing:0.3px; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  #hint{
+    position:fixed; bottom:16px; left:50%; transform:translateX(-50%);
+    background:rgba(34,28,31,0.72); color:#fff; font-size:12px;
+    padding:8px 14px; border-radius:999px; pointer-events:none;
+    letter-spacing:0.2px; z-index:10;
+  }
+</style>
+</head>
+<body>
+
+<div id="loading"><div class="spinner"></div><span>Building the studio&hellip;</span></div>
+
+<div id="overlay">
+  <div id="title">
+    <h1>Fly<span>Mingo</span> Studio — 3D</h1>
+    <p>Interactive recreation of the design studio</p>
+  </div>
+  <div id="controls">
+    <button class="btn secondary" id="rotateBtn">Auto-rotate: Off</button>
+    <button class="btn" id="resetBtn">Reset View</button>
+  </div>
+</div>
+<div id="hint">Drag to orbit &nbsp;•&nbsp; scroll to zoom &nbsp;•&nbsp; right-drag to pan</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "./assets/vendor/three/build/three.module.js",
+    "three/addons/": "./assets/vendor/three/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="assets/flymingo-3d.js"></script>
+</body>
+</html>
