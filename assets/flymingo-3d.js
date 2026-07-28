@@ -37,6 +37,12 @@ const LOGO_DARK = "#2f0a22";
 let scene, camera, renderer, controls;
 let autoRotate = false;
 
+// the exact, unmodified FlyMingo logo artwork (2104x1286)
+const textureLoader = new THREE.TextureLoader();
+const LOGO_ASPECT = 2104 / 1286;
+const logoTexture = textureLoader.load("assets/flymingo-logo.png");
+logoTexture.colorSpace = THREE.SRGBColorSpace;
+
 init();
 buildScene();
 animate();
@@ -535,25 +541,18 @@ function addNeonPalm(x, z) {
 }
 
 function addSignageWall() {
-  const tex = makeCanvasTexture(1024, 512, (ctx, w, h) => {
-    ctx.fillStyle = LOGO_YELLOW;
-    ctx.fillRect(0, 0, w, h);
-    drawFlamingoMark(ctx, 150, h / 2, 1.9, LOGO_PINK);
-    ctx.fillStyle = LOGO_PINK;
-    ctx.font = "italic 800 108px 'Segoe Script','Brush Script MT',cursive";
-    ctx.textBaseline = "middle";
-    ctx.fillText("FlyMingo", 300, h / 2 + 12);
-  });
+  const panelHeight = 2.6;
+  const panelWidth = panelHeight * LOGO_ASPECT;
   const panel = new THREE.Mesh(
-    new THREE.PlaneGeometry(4.6, 2.3),
-    new THREE.MeshStandardMaterial({ map: tex, roughness: 0.9 })
+    new THREE.PlaneGeometry(panelWidth, panelHeight),
+    new THREE.MeshStandardMaterial({ map: logoTexture, roughness: 0.9 })
   );
   panel.position.set(-3.2, 2.7, -3.94);
   scene.add(panel);
 
   // thin frame
   const frame = new THREE.Mesh(
-    new THREE.BoxGeometry(4.7, 2.4, 0.04),
+    new THREE.BoxGeometry(panelWidth + 0.12, panelHeight + 0.12, 0.04),
     new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.6 })
   );
   frame.position.set(-3.2, 2.7, -3.97);
