@@ -29,6 +29,11 @@ const COLORS = {
   sky: 0xbfe0f2,
 };
 
+// exact brand colors sampled from the official FlyMingo logo artwork
+const LOGO_YELLOW = "#f4ff53";
+const LOGO_PINK = "#e1329f";
+const LOGO_DARK = "#2f0a22";
+
 let scene, camera, renderer, controls;
 let autoRotate = false;
 
@@ -142,46 +147,134 @@ function makeCanvasTexture(w, h, draw) {
   return tex;
 }
 
-function drawFlamingoMark(ctx, cx, cy, s, color) {
+function taperedRibbon(ctx, p0, p1, p2, p3, w0, w1, segments) {
+  segments = segments || 20;
+  function bez(t) {
+    const mt = 1 - t;
+    return {
+      x: mt * mt * mt * p0.x + 3 * mt * mt * t * p1.x + 3 * mt * t * t * p2.x + t * t * t * p3.x,
+      y: mt * mt * mt * p0.y + 3 * mt * mt * t * p1.y + 3 * mt * t * t * p2.y + t * t * t * p3.y,
+    };
+  }
+  const pts = [];
+  for (let i = 0; i <= segments; i++) pts.push(bez(i / segments));
+  const left = [], right = [];
+  for (let i = 0; i <= segments; i++) {
+    const t = i / segments;
+    const p = pts[i];
+    const pPrev = pts[Math.max(0, i - 1)];
+    const pNext = pts[Math.min(segments, i + 1)];
+    let dx = pNext.x - pPrev.x, dy = pNext.y - pPrev.y;
+    const len = Math.hypot(dx, dy) || 1;
+    dx /= len; dy /= len;
+    const nx = -dy, ny = dx;
+    const w = w0 + (w1 - w0) * t;
+    left.push({ x: p.x + (nx * w) / 2, y: p.y + (ny * w) / 2 });
+    right.push({ x: p.x - (nx * w) / 2, y: p.y - (ny * w) / 2 });
+  }
+  ctx.beginPath();
+  ctx.moveTo(left[0].x, left[0].y);
+  for (let i = 1; i < left.length; i++) ctx.lineTo(left[i].x, left[i].y);
+  for (let i = right.length - 1; i >= 0; i--) ctx.lineTo(right[i].x, right[i].y);
+  ctx.closePath();
+  ctx.fill();
+}
+
+// Recreates the official FlyMingo brand mark: curled forelock, sleepy
+// closed eye, S-curve neck, rounded body, fanned wing, paisley tail
+// plume, and thin crossed legs.
+function drawFlamingoMark(ctx, cx, cy, s, pinkColor, darkColor) {
+  darkColor = darkColor || LOGO_DARK;
   ctx.save();
   ctx.translate(cx, cy);
   ctx.scale(s, s);
-  ctx.strokeStyle = color;
-  ctx.fillStyle = color;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
 
-  // legs
-  ctx.lineWidth = 3.2;
+  // legs (behind body) — thin, crossed, tapered
+  ctx.strokeStyle = darkColor;
+  ctx.lineCap = "round";
+  ctx.lineWidth = 3;
   ctx.beginPath();
-  ctx.moveTo(-4, 40);
-  ctx.lineTo(-10, 92);
-  ctx.moveTo(4, 40);
-  ctx.lineTo(14, 92);
+  ctx.moveTo(-6, 40);
+  ctx.bezierCurveTo(10, 90, 30, 145, 46, 215);
+  ctx.moveTo(6, 40);
+  ctx.bezierCurveTo(-8, 95, -26, 150, -40, 212);
   ctx.stroke();
+  ctx.lineWidth = 1.4;
+  ctx.beginPath();
+  ctx.moveTo(46, 215); ctx.lineTo(51, 228);
+  ctx.moveTo(-40, 212); ctx.lineTo(-46, 224);
+  ctx.stroke();
+
+  ctx.fillStyle = pinkColor;
+
+  // tail plume (paisley swoop to the left of the body)
+  ctx.beginPath();
+  ctx.moveTo(-8, 14);
+  ctx.bezierCurveTo(-32, 8, -50, 22, -54, 42);
+  ctx.bezierCurveTo(-57, 57, -46, 64, -35, 56);
+  ctx.bezierCurveTo(-42, 48, -36, 35, -21, 27);
+  ctx.bezierCurveTo(-12, 23, -6, 20, -8, 14);
+  ctx.closePath();
+  ctx.fill();
 
   // body
   ctx.beginPath();
-  ctx.ellipse(0, 26, 15, 20, 0, 0, Math.PI * 2);
+  ctx.ellipse(-2, 20, 25, 23, 0, 0, Math.PI * 2);
   ctx.fill();
 
-  // neck
-  ctx.lineWidth = 9;
-  ctx.beginPath();
-  ctx.moveTo(6, 10);
-  ctx.bezierCurveTo(24, -8, -14, -26, -2, -46);
-  ctx.stroke();
+  // wing — 3 rounded lobes fanned like fingers, upper-right of the body
+  const lobes = [
+    { x: 10, y: 14, a: -0.75, len: 32, w: 13 },
+    { x: 15, y: 6, a: -0.2, len: 40, w: 15 },
+    { x: 15, y: -1, a: 0.32, len: 32, w: 12 },
+  ];
+  lobes.forEach(({ x, y, a, len, w }) => {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(a);
+    ctx.beginPath();
+    ctx.ellipse((len * 0.46), 0, len / 2, w / 2, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  });
+
+  // neck — tapered ribbon, S-curve from body up to head
+  taperedRibbon(
+    ctx,
+    { x: 0, y: 4 },
+    { x: 24, y: -34 },
+    { x: 12, y: -68 },
+    { x: -9, y: -98 },
+    22,
+    15,
+    24
+  );
 
   // head
   ctx.beginPath();
-  ctx.arc(-2, -50, 8, 0, Math.PI * 2);
+  ctx.ellipse(-11, -105, 15, 13.5, -0.15, 0, Math.PI * 2);
   ctx.fill();
 
-  // beak
-  ctx.lineWidth = 4;
+  // forelock curl (filled hook/comma shape)
   ctx.beginPath();
-  ctx.moveTo(-9, -50);
-  ctx.lineTo(-22, -46);
+  ctx.arc(-8, -126, 8, Math.PI * 0.05, Math.PI * 1.7);
+  ctx.lineWidth = 6;
+  ctx.strokeStyle = pinkColor;
+  ctx.lineCap = "round";
+  ctx.stroke();
+
+  // eye — closed, sleepy, with lash flicks
+  ctx.strokeStyle = darkColor;
+  ctx.lineWidth = 2.4;
+  ctx.lineCap = "round";
+  ctx.beginPath();
+  ctx.moveTo(-22, -106);
+  ctx.quadraticCurveTo(-11, -99, -1, -108);
+  ctx.stroke();
+  ctx.lineWidth = 1.6;
+  ctx.beginPath();
+  ctx.moveTo(-22, -106); ctx.lineTo(-29, -110);
+  ctx.moveTo(-19, -102); ctx.lineTo(-24, -98);
   ctx.stroke();
 
   ctx.restore();
@@ -443,10 +536,10 @@ function addNeonPalm(x, z) {
 
 function addSignageWall() {
   const tex = makeCanvasTexture(1024, 512, (ctx, w, h) => {
-    ctx.fillStyle = "#f4c60d";
+    ctx.fillStyle = LOGO_YELLOW;
     ctx.fillRect(0, 0, w, h);
-    drawFlamingoMark(ctx, 150, h / 2, 1.9, "#ec1e8f");
-    ctx.fillStyle = "#ec1e8f";
+    drawFlamingoMark(ctx, 150, h / 2, 1.9, LOGO_PINK);
+    ctx.fillStyle = LOGO_PINK;
     ctx.font = "italic 800 108px 'Segoe Script','Brush Script MT',cursive";
     ctx.textBaseline = "middle";
     ctx.fillText("FlyMingo", 300, h / 2 + 12);
@@ -471,7 +564,7 @@ function addSmallPoster(x, z, y) {
   const tex = makeCanvasTexture(320, 420, (ctx, w, h) => {
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, w, h);
-    drawFlamingoMark(ctx, w / 2, h / 2 + 20, 2.4, "#ec1e8f");
+    drawFlamingoMark(ctx, w / 2, h / 2 + 20, 2.4, LOGO_PINK);
     ctx.fillStyle = "#f4c60d";
     ctx.beginPath();
     ctx.arc(w / 2 - 24, h / 2 - 118, 6, 0, Math.PI * 2);
@@ -790,7 +883,7 @@ function addNotebook(parent, x, y, color) {
   const tex = makeCanvasTexture(200, 260, (ctx, w, h) => {
     ctx.fillStyle = "#f4c60d";
     ctx.fillRect(0, 0, w, h);
-    drawFlamingoMark(ctx, w / 2, h / 2 - 20, 1.0, "#ec1e8f");
+    drawFlamingoMark(ctx, w / 2, h / 2 - 20, 1.0, LOGO_PINK);
   });
   const geo = new THREE.BoxGeometry(0.34, 0.46, 0.06);
   const mat = [
